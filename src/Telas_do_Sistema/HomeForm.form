@@ -265,6 +265,7 @@
               <Color id="Hand Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jProductsButtonMouseClicked"/>
@@ -293,6 +294,7 @@
               <Color id="Hand Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jClientButtonMouseClicked"/>
@@ -321,6 +323,7 @@
               <Color id="Hand Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jOrdersButtonMouseClicked"/>
@@ -349,6 +352,7 @@
               <Color id="Hand Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jIventoryButtonMouseClicked"/>
@@ -377,6 +381,7 @@
               <Color id="Hand Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jStockControlButtonMouseClicked"/>
@@ -405,6 +410,7 @@
               <Color id="Hand Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jIncomeInfluxButtonMouseClicked"/>
@@ -433,6 +439,7 @@
               <Color id="Hand Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jSalesButtonMouseClicked"/>
@@ -461,6 +468,7 @@
               <Color id="Hand Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jReportButtonMouseClicked"/>
@@ -489,6 +497,7 @@
               <Color id="Hand Cursor"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jBudgetButtonMouseClicked"/>

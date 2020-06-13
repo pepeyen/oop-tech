@@ -129,6 +129,7 @@ public class HomeForm extends javax.swing.JFrame {
         jProductsButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         jProductsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jProductsButton.setFocusPainted(false);
+        jProductsButton.setOpaque(false);
         jProductsButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jProductsButtonMouseClicked(evt);
@@ -142,6 +143,7 @@ public class HomeForm extends javax.swing.JFrame {
         jClientButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         jClientButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jClientButton.setFocusPainted(false);
+        jClientButton.setOpaque(false);
         jClientButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jClientButtonMouseClicked(evt);
@@ -155,6 +157,7 @@ public class HomeForm extends javax.swing.JFrame {
         jOrdersButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         jOrdersButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jOrdersButton.setFocusPainted(false);
+        jOrdersButton.setOpaque(false);
         jOrdersButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jOrdersButtonMouseClicked(evt);
@@ -168,6 +171,7 @@ public class HomeForm extends javax.swing.JFrame {
         jIventoryButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         jIventoryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jIventoryButton.setFocusPainted(false);
+        jIventoryButton.setOpaque(false);
         jIventoryButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jIventoryButtonMouseClicked(evt);
@@ -181,6 +185,7 @@ public class HomeForm extends javax.swing.JFrame {
         jStockControlButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         jStockControlButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jStockControlButton.setFocusPainted(false);
+        jStockControlButton.setOpaque(false);
         jStockControlButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jStockControlButtonMouseClicked(evt);
@@ -194,6 +199,7 @@ public class HomeForm extends javax.swing.JFrame {
         jIncomeInfluxButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         jIncomeInfluxButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jIncomeInfluxButton.setFocusPainted(false);
+        jIncomeInfluxButton.setOpaque(false);
         jIncomeInfluxButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jIncomeInfluxButtonMouseClicked(evt);
@@ -207,6 +213,7 @@ public class HomeForm extends javax.swing.JFrame {
         jSalesButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         jSalesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jSalesButton.setFocusPainted(false);
+        jSalesButton.setOpaque(false);
         jSalesButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jSalesButtonMouseClicked(evt);
@@ -220,6 +227,7 @@ public class HomeForm extends javax.swing.JFrame {
         jReportButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         jReportButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jReportButton.setFocusPainted(false);
+        jReportButton.setOpaque(false);
         jReportButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jReportButtonMouseClicked(evt);
@@ -233,6 +241,7 @@ public class HomeForm extends javax.swing.JFrame {
         jBudgetButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         jBudgetButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBudgetButton.setFocusPainted(false);
+        jBudgetButton.setOpaque(false);
         jBudgetButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jBudgetButtonMouseClicked(evt);
