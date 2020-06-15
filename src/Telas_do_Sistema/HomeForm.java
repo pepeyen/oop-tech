@@ -119,7 +119,7 @@ public class HomeForm extends javax.swing.JFrame {
             .addGroup(jTitlePaneLayout.createSequentialGroup()
                 .addGap(251, 251, 251)
                 .addComponent(jTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(319, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jProductsButton.setBackground(new java.awt.Color(149, 149, 149));
@@ -175,6 +175,11 @@ public class HomeForm extends javax.swing.JFrame {
         jIventoryButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jIventoryButtonMouseClicked(evt);
+            }
+        });
+        jIventoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jIventoryButtonActionPerformed(evt);
             }
         });
 
@@ -272,20 +277,17 @@ public class HomeForm extends javax.swing.JFrame {
                     .addComponent(jProductsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBudgetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jIncomeInfluxButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jBackgroundPaneLayout.createSequentialGroup()
-                        .addComponent(jClientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(82, 82, 82)
-                        .addComponent(jOrdersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jBackgroundPaneLayout.createSequentialGroup()
-                        .addComponent(jIventoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jStockControlButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jBackgroundPaneLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jClientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jSalesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jReportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jIventoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jOrdersButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jStockControlButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jReportButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jBackgroundPaneLayout.setVerticalGroup(
@@ -308,8 +310,11 @@ public class HomeForm extends javax.swing.JFrame {
                         .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jReportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jIncomeInfluxButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSalesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jTitlePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jSalesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(190, Short.MAX_VALUE))
+                    .addGroup(jBackgroundPaneLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTitlePane))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -322,8 +327,7 @@ public class HomeForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jBackgroundPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addComponent(jBackgroundPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -348,7 +352,7 @@ public class HomeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jTitleBarMouseDragged
 
     private void jProductsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jProductsButtonMouseClicked
-        ProductsForm productsForm = new ProductsForm();
+        ProductForm productsForm = new ProductForm();
         productsForm.setVisible(true);
     }//GEN-LAST:event_jProductsButtonMouseClicked
 
@@ -358,7 +362,7 @@ public class HomeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jClientButtonMouseClicked
 
     private void jOrdersButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jOrdersButtonMouseClicked
-        OrdersForm ordersForm = new OrdersForm();
+        OrderForm ordersForm = new OrderForm();
         ordersForm.setVisible(true);
     }//GEN-LAST:event_jOrdersButtonMouseClicked
 
@@ -383,7 +387,7 @@ public class HomeForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jIncomeInfluxButtonMouseClicked
 
     private void jSalesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSalesButtonMouseClicked
-        SalesForm salesForm = new SalesForm();
+        SaleForm salesForm = new SaleForm();
         salesForm.setVisible(true);
     }//GEN-LAST:event_jSalesButtonMouseClicked
 
@@ -391,6 +395,10 @@ public class HomeForm extends javax.swing.JFrame {
         ReportForm reportForm = new ReportForm();
         reportForm.setVisible(true);
     }//GEN-LAST:event_jReportButtonMouseClicked
+
+    private void jIventoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIventoryButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jIventoryButtonActionPerformed
 
     public static void main(String args[]) {
         try {

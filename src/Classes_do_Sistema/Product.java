@@ -1,35 +1,19 @@
 package Classes_do_Sistema;
 
-public class Products {
-    private int productId;
-    private double productProductionPrice;
-    private double productSellingPrice;
+public class Product {
+    private int productID;
     private String productName;
     private String productDescription;
+    private double productProductionPrice;
+    private double productSellingPrice;
     
-    public int getProductId() {
-        return productId;
+    public int getProductID() {
+        return productID;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setProductID(int productID) {
+        this.productID = productID;
     }
-
-    public double getProductProductionPrice() {
-        return productProductionPrice;
-    }
-
-    public void setProductProductionPrice(double productProductionPrice) {
-        this.productProductionPrice = productProductionPrice;
-    }
-    
-    public double getProductSellingPrice() {
-        return productSellingPrice;
-    }
-
-    public void setProductSellingPrice(double productSellingPrice) {
-        this.productSellingPrice = productSellingPrice;
-    }    
 
     public String getProductName() {
         return productName;
@@ -46,4 +30,21 @@ public class Products {
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
+    
+    public double getProductSellingPrice() {
+        return productSellingPrice;
+    }
+
+    public void setProductSellingPrice(double productSellingPrice) {
+        this.productSellingPrice = productSellingPrice;
+    }
+    
+    public double getProductProductionPrice() {
+        return productProductionPrice;
+    }
+
+    public void setProductProductionPrice(double productProductionPrice) {
+        this.productProductionPrice = productProductionPrice;
+    }
+    
 }

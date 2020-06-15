@@ -38,7 +38,6 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="jBackgroundPane" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -64,23 +63,19 @@
                       <Component id="jBudgetButton" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="jIncomeInfluxButton" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="82" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jClientButton" min="-2" pref="200" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                          <Component id="jOrdersButton" min="-2" pref="200" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jClientButton" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jSalesButton" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="jIventoryButton" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jIventoryButton" min="-2" pref="200" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jStockControlButton" min="-2" pref="200" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jSalesButton" min="-2" pref="200" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jReportButton" min="-2" pref="200" max="-2" attributes="0"/>
-                      </Group>
+                  </Group>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jOrdersButton" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Component id="jStockControlButton" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Component id="jReportButton" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -91,7 +86,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jTitleBar" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jProductsButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
@@ -110,8 +105,12 @@
                               <Component id="jIncomeInfluxButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                               <Component id="jSalesButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace pref="190" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jTitlePane" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jTitlePane" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
           </Group>
@@ -220,7 +219,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="251" max="-2" attributes="0"/>
                       <Component id="jTitleLabel" min="-2" pref="97" max="-2" attributes="0"/>
-                      <EmptySpace pref="319" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -356,6 +355,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jIventoryButtonMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jIventoryButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jStockControlButton">
