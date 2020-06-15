@@ -6,6 +6,7 @@ public class Product {
     private String productDescription;
     private double productProductionPrice;
     private double productSellingPrice;
+    private int productStock;
     
     public int getProductID() {
         return productID;
@@ -46,5 +47,13 @@ public class Product {
     public void setProductProductionPrice(double productProductionPrice) {
         this.productProductionPrice = productProductionPrice;
     }
+    
+    public double getProductStock() {
+        return productStock;
+    }
+
+    public void setProductStock(int productStock) {
+        this.productStock = productStock;
+    }    
     
 }

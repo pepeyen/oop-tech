@@ -22,10 +22,8 @@ public class HomeForm extends javax.swing.JFrame {
         jClientButton = new javax.swing.JButton();
         jOrderButton = new javax.swing.JButton();
         jIventoryButton = new javax.swing.JButton();
-        jStockControlButton = new javax.swing.JButton();
         jIncomeInfluxButton = new javax.swing.JButton();
         jSaleButton = new javax.swing.JButton();
-        jReportButton = new javax.swing.JButton();
         jBudgetButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -122,7 +120,7 @@ public class HomeForm extends javax.swing.JFrame {
             .addGroup(jTitlePaneLayout.createSequentialGroup()
                 .addGap(251, 251, 251)
                 .addComponent(jTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(330, Short.MAX_VALUE))
         );
 
         jProductButton.setBackground(new java.awt.Color(149, 149, 149));
@@ -186,20 +184,6 @@ public class HomeForm extends javax.swing.JFrame {
             }
         });
 
-        jStockControlButton.setBackground(new java.awt.Color(149, 149, 149));
-        jStockControlButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jStockControlButton.setForeground(new java.awt.Color(249, 249, 249));
-        jStockControlButton.setText("Controle De Estoque");
-        jStockControlButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
-        jStockControlButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jStockControlButton.setFocusPainted(false);
-        jStockControlButton.setOpaque(false);
-        jStockControlButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jStockControlButtonMouseClicked(evt);
-            }
-        });
-
         jIncomeInfluxButton.setBackground(new java.awt.Color(149, 149, 149));
         jIncomeInfluxButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jIncomeInfluxButton.setForeground(new java.awt.Color(249, 249, 249));
@@ -228,20 +212,6 @@ public class HomeForm extends javax.swing.JFrame {
             }
         });
 
-        jReportButton.setBackground(new java.awt.Color(149, 149, 149));
-        jReportButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jReportButton.setForeground(new java.awt.Color(249, 249, 249));
-        jReportButton.setText("Relatorio");
-        jReportButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
-        jReportButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jReportButton.setFocusPainted(false);
-        jReportButton.setOpaque(false);
-        jReportButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jReportButtonMouseClicked(evt);
-            }
-        });
-
         jBudgetButton.setBackground(new java.awt.Color(149, 149, 149));
         jBudgetButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jBudgetButton.setForeground(new java.awt.Color(249, 249, 249));
@@ -262,10 +232,8 @@ public class HomeForm extends javax.swing.JFrame {
         jBackgroundPane.setLayer(jClientButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jOrderButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jIventoryButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jBackgroundPane.setLayer(jStockControlButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jIncomeInfluxButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jSaleButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jBackgroundPane.setLayer(jReportButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jBudgetButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jBackgroundPaneLayout = new javax.swing.GroupLayout(jBackgroundPane);
@@ -278,23 +246,18 @@ public class HomeForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jProductButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBudgetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jIncomeInfluxButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBudgetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jClientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jSaleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jIventoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jBackgroundPaneLayout.createSequentialGroup()
-                        .addGap(78, 78, 78)
                         .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jOrderButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jReportButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jBackgroundPaneLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jStockControlButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jClientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jIventoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(78, 78, 78)
+                        .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jOrderButton, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(jIncomeInfluxButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jSaleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jBackgroundPaneLayout.setVerticalGroup(
@@ -310,15 +273,12 @@ public class HomeForm extends javax.swing.JFrame {
                             .addComponent(jOrderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(92, 92, 92)
                         .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jStockControlButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jBudgetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jIventoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jIventoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jIncomeInfluxButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(92, 92, 92)
-                        .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jReportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jIncomeInfluxButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSaleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(190, Short.MAX_VALUE))
+                        .addComponent(jSaleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(jBackgroundPaneLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTitlePane))))
@@ -383,11 +343,6 @@ public class HomeForm extends javax.swing.JFrame {
         iventoryForm.setVisible(true);
     }//GEN-LAST:event_jIventoryButtonMouseClicked
 
-    private void jStockControlButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jStockControlButtonMouseClicked
-        StockControlForm stockControlForm = new StockControlForm();
-        stockControlForm.setVisible(true);
-    }//GEN-LAST:event_jStockControlButtonMouseClicked
-
     private void jIncomeInfluxButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jIncomeInfluxButtonMouseClicked
         IncomeInfluxForm incomeInfluxForm = new IncomeInfluxForm();
         incomeInfluxForm.setVisible(true);
@@ -397,11 +352,6 @@ public class HomeForm extends javax.swing.JFrame {
         SaleForm saleForm = new SaleForm();
         saleForm.setVisible(true);
     }//GEN-LAST:event_jSaleButtonMouseClicked
-
-    private void jReportButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jReportButtonMouseClicked
-        ReportForm reportForm = new ReportForm();
-        reportForm.setVisible(true);
-    }//GEN-LAST:event_jReportButtonMouseClicked
 
     private void jIventoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIventoryButtonActionPerformed
         // TODO add your handling code here:
@@ -441,9 +391,7 @@ public class HomeForm extends javax.swing.JFrame {
     private javax.swing.JButton jMinimizeButton;
     private javax.swing.JButton jOrderButton;
     private javax.swing.JButton jProductButton;
-    private javax.swing.JButton jReportButton;
     private javax.swing.JButton jSaleButton;
-    private javax.swing.JButton jStockControlButton;
     private javax.swing.JPanel jTitleBar;
     private javax.swing.JLabel jTitleLabel;
     private javax.swing.JLayeredPane jTitlePane;

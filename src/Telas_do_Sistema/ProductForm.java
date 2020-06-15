@@ -37,10 +37,14 @@ public class ProductForm extends javax.swing.JFrame implements InitWriting {
         jIptProdSellingPriceLabel = new javax.swing.JLabel();
         jIptProdProductionPriceLabel = new javax.swing.JLabel();
         jCBoxFileExtensions = new javax.swing.JComboBox<>();
+        jIptProdStock = new javax.swing.JTextField();
+        jIptProdStockLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setSize(new java.awt.Dimension(1280, 720));
 
         jBackgroundPane.setBackground(new java.awt.Color(139, 139, 139));
         jBackgroundPane.setOpaque(true);
@@ -130,29 +134,37 @@ public class ProductForm extends javax.swing.JFrame implements InitWriting {
 
         jIptProdIDLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jIptProdIDLabel.setForeground(new java.awt.Color(249, 249, 249));
-        jIptProdIDLabel.setText("Product ID");
+        jIptProdIDLabel.setText("ID Produto");
 
         jIptProdNameLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jIptProdNameLabel.setForeground(new java.awt.Color(249, 249, 249));
-        jIptProdNameLabel.setText("Product Name");
+        jIptProdNameLabel.setText("Nome Produto");
 
         jIptProdDescriptionLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jIptProdDescriptionLabel.setForeground(new java.awt.Color(249, 249, 249));
-        jIptProdDescriptionLabel.setText("Product Description");
+        jIptProdDescriptionLabel.setText("Descricação Produto");
 
         jIptProdSellingPriceLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jIptProdSellingPriceLabel.setForeground(new java.awt.Color(249, 249, 249));
-        jIptProdSellingPriceLabel.setText("Product Selling Price");
+        jIptProdSellingPriceLabel.setText("Preço de Venda do Produto");
 
         jIptProdProductionPriceLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jIptProdProductionPriceLabel.setForeground(new java.awt.Color(249, 249, 249));
-        jIptProdProductionPriceLabel.setText("Product Production Price");
+        jIptProdProductionPriceLabel.setText("Preço de Produção do Produto");
 
         jCBoxFileExtensions.setBackground(new java.awt.Color(179, 179, 179));
         jCBoxFileExtensions.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jCBoxFileExtensions.setForeground(new java.awt.Color(249, 249, 249));
         jCBoxFileExtensions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".txt", ".doc" }));
         jCBoxFileExtensions.setFocusable(false);
+
+        jIptProdStock.setBackground(new java.awt.Color(189, 189, 189));
+        jIptProdStock.setForeground(new java.awt.Color(102, 102, 102));
+        jIptProdStock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
+
+        jIptProdStockLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jIptProdStockLabel.setForeground(new java.awt.Color(249, 249, 249));
+        jIptProdStockLabel.setText("Estoque Produto");
 
         jBackgroundPane.setLayer(jTitleBar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jIptProdName, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -167,6 +179,8 @@ public class ProductForm extends javax.swing.JFrame implements InitWriting {
         jBackgroundPane.setLayer(jIptProdSellingPriceLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jIptProdProductionPriceLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jCBoxFileExtensions, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jBackgroundPane.setLayer(jIptProdStock, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jBackgroundPane.setLayer(jIptProdStockLabel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jBackgroundPaneLayout = new javax.swing.GroupLayout(jBackgroundPane);
         jBackgroundPane.setLayout(jBackgroundPaneLayout);
@@ -174,34 +188,40 @@ public class ProductForm extends javax.swing.JFrame implements InitWriting {
             jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTitleBar)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jBackgroundPaneLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jBackgroundPaneLayout.createSequentialGroup()
-                        .addComponent(jIptProdID, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jBackgroundPaneLayout.createSequentialGroup()
+                        .addGap(237, 237, 237)
+                        .addComponent(jIptProdIDLabel)
+                        .addGap(112, 112, 112)
+                        .addComponent(jIptProdNameLabel)
+                        .addGap(93, 93, 93)
+                        .addComponent(jIptProdDescriptionLabel)
+                        .addGap(57, 57, 57)
+                        .addComponent(jIptProdSellingPriceLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jIptProdProductionPriceLabel))
+                    .addGroup(jBackgroundPaneLayout.createSequentialGroup()
+                        .addContainerGap(178, Short.MAX_VALUE)
+                        .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jBackgroundPaneLayout.createSequentialGroup()
+                                .addComponent(jIptProdID, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jIptProdName, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jCBoxFileExtensions, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jIptProdName, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jCBoxFileExtensions, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jBtnRegProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jIptProdDescription, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jIptProdSellingPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jIptProdProductionPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jBtnRegProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jIptProdDescription, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                            .addComponent(jIptProdStock, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jIptProdSellingPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jIptProdProductionPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(180, 180, 180))
             .addGroup(jBackgroundPaneLayout.createSequentialGroup()
-                .addGap(237, 237, 237)
-                .addComponent(jIptProdIDLabel)
-                .addGap(118, 118, 118)
-                .addComponent(jIptProdNameLabel)
-                .addGap(94, 94, 94)
-                .addComponent(jIptProdDescriptionLabel)
-                .addGap(75, 75, 75)
-                .addComponent(jIptProdSellingPriceLabel)
-                .addGap(64, 64, 64)
-                .addComponent(jIptProdProductionPriceLabel)
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addGap(594, 594, 594)
+                .addComponent(jIptProdStockLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jBackgroundPaneLayout.setVerticalGroup(
             jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,20 +241,25 @@ public class ProductForm extends javax.swing.JFrame implements InitWriting {
                     .addComponent(jIptProdSellingPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jIptProdProductionPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jIptProdName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                .addGap(27, 27, 27)
+                .addComponent(jIptProdStockLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jIptProdStock, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnRegProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBoxFileExtensions, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 247, Short.MAX_VALUE))
+                .addGap(0, 192, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, 0)
                 .addComponent(jBackgroundPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,6 +322,8 @@ public class ProductForm extends javax.swing.JFrame implements InitWriting {
     private javax.swing.JLabel jIptProdProductionPriceLabel;
     private javax.swing.JTextField jIptProdSellingPrice;
     private javax.swing.JLabel jIptProdSellingPriceLabel;
+    private javax.swing.JTextField jIptProdStock;
+    private javax.swing.JLabel jIptProdStockLabel;
     private javax.swing.JButton jMinimizeButton;
     private javax.swing.JLayeredPane jTitleBar;
     // End of variables declaration//GEN-END:variables
@@ -310,6 +337,7 @@ public class ProductForm extends javax.swing.JFrame implements InitWriting {
         jIptProdDescription.setText("");
         jIptProdSellingPrice.setText("");
         jIptProdProductionPrice.setText("");
+        jIptProdStock.setText("");
     }
     
     public void save(Product product){
@@ -318,6 +346,7 @@ public class ProductForm extends javax.swing.JFrame implements InitWriting {
         product.setProductDescription(jIptProdDescription.getText());
         product.setProductSellingPrice(Double.parseDouble(jIptProdSellingPrice.getText()));
         product.setProductProductionPrice(Double.parseDouble(jIptProdProductionPrice.getText()));
+        product.setProductStock(Integer.parseInt(jIptProdStock.getText()));
         
         products[currentProduct] = product;
         currentProduct ++;
@@ -339,6 +368,8 @@ public class ProductForm extends javax.swing.JFrame implements InitWriting {
             pw.println(fileName + "-Production-Price: "+jIptProdProductionPrice.getText());
 
             pw.println(fileName + "-Selling-Price: "+jIptProdSellingPrice.getText());
+            
+            pw.println(fileName + "-Stock: "+jIptProdStock.getText());
             
             pw.print("---------------------------------------------\n");
             pw.flush();

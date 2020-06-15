@@ -61,6 +61,8 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
         jLblPaymentCreditC = new javax.swing.JLabel();
         jLblPaymentDebitC = new javax.swing.JLabel();
         jCBoxFileExtensions = new javax.swing.JComboBox<>();
+        jIptQuantity = new javax.swing.JTextField();
+        jLblQuantity = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -108,7 +110,7 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
         jTitleBarLayout.setHorizontalGroup(
             jTitleBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTitleBarLayout.createSequentialGroup()
-                .addContainerGap(1182, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jMinimizeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -165,14 +167,14 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
 
             },
             new String [] {
-                "ID da Venda", "Nome do Cliente", "Nome do Vendedor", "ID do Produto", "Descrição do Produto", "Preço Total"
+                "ID da Venda", "Nome do Cliente", "Nome do Vendedor", "ID do Produto", "Descrição do Produto", "Quantidade do Produto", "Preço Total"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -295,6 +297,17 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
         jCBoxFileExtensions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".txt", ".doc" }));
         jCBoxFileExtensions.setFocusable(false);
 
+        jIptQuantity.setBackground(new java.awt.Color(139, 139, 139));
+        jIptQuantity.setForeground(new java.awt.Color(139, 139, 139));
+        jIptQuantity.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 139, 139)));
+        jIptQuantity.setEnabled(false);
+        jIptQuantity.setOpaque(false);
+
+        jLblQuantity.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLblQuantity.setForeground(new java.awt.Color(1, 1, 1));
+        jLblQuantity.setText("Quantidade");
+        jLblQuantity.setEnabled(false);
+
         jLayeredPane1.setLayer(jLblID, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jIptID, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jBtnStart, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -317,6 +330,8 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
         jLayeredPane1.setLayer(jLblPaymentCreditC, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLblPaymentDebitC, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jCBoxFileExtensions, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jIptQuantity, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLblQuantity, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -346,7 +361,11 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
                                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jIptDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLblDescription))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLblQuantity)
+                                    .addComponent(jIptQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, Short.MAX_VALUE)
                                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jRBtnPaymentDebitC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jRBtnPaymentCreditC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -356,7 +375,7 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
                                     .addComponent(jLblPaymentMoney)
                                     .addComponent(jLblPaymentDebitC)
                                     .addComponent(jLblPaymentCreditC))
-                                .addGap(176, 176, 176)
+                                .addGap(38, 38, 38)
                                 .addComponent(jTxtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -400,20 +419,27 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addGap(0, 31, Short.MAX_VALUE)
-                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                .addComponent(jLblDescription)
-                                .addGap(18, 18, 18)
-                                .addComponent(jIptDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 31, Short.MAX_VALUE)
+                                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLblDescription)
+                                            .addComponent(jLblQuantity))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jIptDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jIptQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                                        .addComponent(jLblProductID)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jCBXProductID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(63, 63, 63))
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                .addComponent(jLblProductID)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCBXProductID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(63, 63, 63))
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addComponent(jTxtTotal)
-                        .addGap(52, 52, 52))
+                                .addComponent(jTxtTotal)
+                                .addGap(52, 52, 52)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRBtnPaymentMoney)
@@ -426,8 +452,7 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRBtnPaymentCreditC)
                             .addComponent(jLblPaymentCreditC))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -474,7 +499,7 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
 
     private void jBtnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnStartActionPerformed
         if(jCBXClient.getItemAt(jCBXClient.getSelectedIndex()) != null && jCBXProductID.getItemAt(jCBXProductID.getSelectedIndex()) != null){
-            enableBudget();
+             enable();
         }     
     }//GEN-LAST:event_jBtnStartActionPerformed
 
@@ -530,6 +555,7 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
     private javax.swing.JButton jCloseButton;
     private javax.swing.JTextField jIptDescription;
     private javax.swing.JTextField jIptID;
+    private javax.swing.JTextField jIptQuantity;
     private javax.swing.JTextField jIptSeller;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLabel jLblClient;
@@ -539,6 +565,7 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
     private javax.swing.JLabel jLblPaymentDebitC;
     private javax.swing.JLabel jLblPaymentMoney;
     private javax.swing.JLabel jLblProductID;
+    private javax.swing.JLabel jLblQuantity;
     private javax.swing.JLabel jLblSeller;
     private javax.swing.JLabel jLblTotal;
     private javax.swing.JButton jMinimizeButton;
@@ -578,7 +605,7 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
         jCBXProductID.setModel(listIDProducts);
     }
     
-    public void enableBudget(){
+    public void enable(){
         updateOrderID();
         
         jIptDescription.setText(products[item].getProductName()+ " - " + products[item].getProductDescription());
@@ -586,9 +613,42 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
         jRBtnPaymentMoney.setEnabled(true);
         jRBtnPaymentDebitC.setEnabled(true);
         jRBtnPaymentCreditC.setEnabled(true);
+        jLblID.setEnabled(true);
         jIptID.setEnabled(true);
+        jLblSeller.setEnabled(true);
         jIptSeller.setEnabled(true);
-        jIptDescription.setEnabled(true);     
+        jLblDescription.setEnabled(true);
+        jIptDescription.setEnabled(true);
+        jLblQuantity.setEnabled(true);
+        jIptQuantity.setEnabled(true);
+    }
+    
+    public void reset(){
+        //Buttons
+        jBtnGroupPayment.clearSelection();  
+        jLblPaymentMoney.setEnabled(false);
+        jRBtnPaymentMoney.setEnabled(false);
+        jLblPaymentDebitC.setEnabled(false);
+        jRBtnPaymentDebitC.setEnabled(false);
+        jLblPaymentCreditC.setEnabled(false);
+        jRBtnPaymentCreditC.setEnabled(false);
+        
+        //Inputs
+        jLblID.setEnabled(false);
+        jIptID.setEnabled(false);
+        jIptID.setText("");
+        jLblSeller.setEnabled(false);
+        jIptSeller.setEnabled(false);
+        jIptSeller.setText("");
+        jLblDescription.setEnabled(false);
+        jIptDescription.setEnabled(false);
+        jIptDescription.setText("");
+        jLblQuantity.setEnabled(false);
+        jIptQuantity.setEnabled(false);
+        jIptQuantity.setText("");
+        
+        //Outputs
+        jTxtTotal.setText("0");      
     }
     
     public void calcFullPrice(String paymentType){
@@ -613,7 +673,7 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
     }
     
     public void getFullPrice(double discountPercentage) {
-        jTxtTotal.setText(String.valueOf(products[item].getProductSellingPrice() - (products[item].getProductSellingPrice() * discountPercentage))); 
+        jTxtTotal.setText(String.valueOf((products[item].getProductSellingPrice() - (products[item].getProductSellingPrice() * discountPercentage)) * Integer.parseInt(jIptQuantity.getText()))); 
         jBtnReg.setEnabled(true);
     }
     public void reg(){        
@@ -622,8 +682,7 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
         
         currentBudget ++;
         
-        jIptID.setText("");
-        jIptDescription.setText("");
+        reset();
     }
     
     public void insertToCart(){
@@ -634,6 +693,7 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
             jIptSeller.getText(),
             jCBXProductID.getItemAt(jCBXProductID.getSelectedIndex()),
             jIptDescription.getText(),
+            jIptQuantity.getText(),
             jTxtTotal.getText()
         };
         cart.addRow(cart_data);
@@ -655,6 +715,8 @@ public class SaleForm extends javax.swing.JFrame implements InitWriting{
             pw.println(fileName + "-Product-ID: "+ jCBXProductID.getItemAt(jCBXProductID.getSelectedIndex()));
             
             pw.println(fileName + "-Production-Description: "+ jIptDescription.getText());
+            
+            pw.println(fileName + "-Production-Quantity: "+ jIptQuantity.getText());
             
             pw.println(fileName + "-Total-Price: "+ jTxtTotal.getText());
             

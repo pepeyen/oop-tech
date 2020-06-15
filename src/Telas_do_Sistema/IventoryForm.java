@@ -1,11 +1,15 @@
 package Telas_do_Sistema;
+import static Classes_do_Sistema.Home.currentProduct;
+import static Classes_do_Sistema.Home.products;
 import java.awt.*;
+import javax.swing.table.DefaultTableModel;
 
 public class IventoryForm extends javax.swing.JFrame {
 
     public IventoryForm() {
         initComponents();
         this.setLocationRelativeTo(null);
+        fillTable();
     }
 
     @SuppressWarnings("unchecked")
@@ -16,12 +20,14 @@ public class IventoryForm extends javax.swing.JFrame {
         jTitleBar = new javax.swing.JLayeredPane();
         jMinimizeButton = new javax.swing.JButton();
         jCloseButton = new javax.swing.JButton();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTblIventory = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setName("iventoryFrame"); // NOI18N
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         jBackgroundPane.setBackground(new java.awt.Color(139, 139, 139));
         jBackgroundPane.setOpaque(true);
@@ -75,19 +81,76 @@ public class IventoryForm extends javax.swing.JFrame {
             .addComponent(jCloseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jLayeredPane1.setBackground(new java.awt.Color(249, 249, 249));
+        jLayeredPane1.setOpaque(true);
+        jLayeredPane1.setPreferredSize(new java.awt.Dimension(1100, 682));
+
+        jScrollPane1.setBorder(null);
+
+        jTblIventory.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nome", "Descrição", "Preço de Venda", "Preço de Produção"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTblIventory.setMaximumSize(new java.awt.Dimension(375, 655));
+        jTblIventory.setMinimumSize(new java.awt.Dimension(375, 655));
+        jTblIventory.setOpaque(false);
+        jTblIventory.setPreferredSize(new java.awt.Dimension(375, 650));
+        jScrollPane1.setViewportView(jTblIventory);
+
+        jLayeredPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 682, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         jBackgroundPane.setLayer(jTitleBar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jBackgroundPane.setLayer(jLayeredPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jBackgroundPaneLayout = new javax.swing.GroupLayout(jBackgroundPane);
         jBackgroundPane.setLayout(jBackgroundPaneLayout);
         jBackgroundPaneLayout.setHorizontalGroup(
             jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTitleBar, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
+            .addGroup(jBackgroundPaneLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jBackgroundPaneLayout.setVerticalGroup(
             jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jBackgroundPaneLayout.createSequentialGroup()
                 .addComponent(jTitleBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 670, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,7 +204,23 @@ public class IventoryForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane jBackgroundPane;
     private javax.swing.JButton jCloseButton;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JButton jMinimizeButton;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTblIventory;
     private javax.swing.JLayeredPane jTitleBar;
     // End of variables declaration//GEN-END:variables
+    public void fillTable(){     
+        for(int i = 0; i < currentProduct; i++){
+            DefaultTableModel table = (DefaultTableModel) jTblIventory.getModel();
+            Object[] table_data = {
+                products[i].getProductID(),
+                products[i].getProductName(),
+                products[i].getProductDescription(),
+                products[i].getProductSellingPrice(),
+                products[i].getProductProductionPrice()
+            };           
+            table.addRow(table_data);
+        }
+    }
 }
