@@ -18,13 +18,13 @@ public class HomeForm extends javax.swing.JFrame {
         jCloseButton = new javax.swing.JButton();
         jTitlePane = new javax.swing.JLayeredPane();
         jTitleLabel = new javax.swing.JLabel();
-        jProductsButton = new javax.swing.JButton();
+        jProductButton = new javax.swing.JButton();
         jClientButton = new javax.swing.JButton();
-        jOrdersButton = new javax.swing.JButton();
+        jOrderButton = new javax.swing.JButton();
         jIventoryButton = new javax.swing.JButton();
         jStockControlButton = new javax.swing.JButton();
         jIncomeInfluxButton = new javax.swing.JButton();
-        jSalesButton = new javax.swing.JButton();
+        jSaleButton = new javax.swing.JButton();
         jReportButton = new javax.swing.JButton();
         jBudgetButton = new javax.swing.JButton();
 
@@ -32,11 +32,14 @@ public class HomeForm extends javax.swing.JFrame {
         setTitle("OOP Tech");
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(249, 249, 249));
+        setName("homeFrame"); // NOI18N
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
 
         jBackgroundPane.setBackground(new java.awt.Color(149, 149, 149));
         jBackgroundPane.setOpaque(true);
+        jBackgroundPane.setPreferredSize(new java.awt.Dimension(1280, 734));
 
         jTitleBar.setBackground(new java.awt.Color(249, 249, 249));
         jTitleBar.setOpaque(false);
@@ -110,7 +113,7 @@ public class HomeForm extends javax.swing.JFrame {
         jTitlePaneLayout.setHorizontalGroup(
             jTitlePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTitlePaneLayout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
+                .addContainerGap(46, Short.MAX_VALUE)
                 .addComponent(jTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -122,17 +125,17 @@ public class HomeForm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jProductsButton.setBackground(new java.awt.Color(149, 149, 149));
-        jProductsButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jProductsButton.setForeground(new java.awt.Color(249, 249, 249));
-        jProductsButton.setText("Produtos");
-        jProductsButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
-        jProductsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jProductsButton.setFocusPainted(false);
-        jProductsButton.setOpaque(false);
-        jProductsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        jProductButton.setBackground(new java.awt.Color(149, 149, 149));
+        jProductButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jProductButton.setForeground(new java.awt.Color(249, 249, 249));
+        jProductButton.setText("Produtos");
+        jProductButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
+        jProductButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jProductButton.setFocusPainted(false);
+        jProductButton.setOpaque(false);
+        jProductButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jProductsButtonMouseClicked(evt);
+                jProductButtonMouseClicked(evt);
             }
         });
 
@@ -150,17 +153,17 @@ public class HomeForm extends javax.swing.JFrame {
             }
         });
 
-        jOrdersButton.setBackground(new java.awt.Color(149, 149, 149));
-        jOrdersButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jOrdersButton.setForeground(new java.awt.Color(249, 249, 249));
-        jOrdersButton.setText("Pedidos");
-        jOrdersButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
-        jOrdersButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jOrdersButton.setFocusPainted(false);
-        jOrdersButton.setOpaque(false);
-        jOrdersButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        jOrderButton.setBackground(new java.awt.Color(149, 149, 149));
+        jOrderButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jOrderButton.setForeground(new java.awt.Color(249, 249, 249));
+        jOrderButton.setText("Pedidos");
+        jOrderButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
+        jOrderButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jOrderButton.setFocusPainted(false);
+        jOrderButton.setOpaque(false);
+        jOrderButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jOrdersButtonMouseClicked(evt);
+                jOrderButtonMouseClicked(evt);
             }
         });
 
@@ -211,17 +214,17 @@ public class HomeForm extends javax.swing.JFrame {
             }
         });
 
-        jSalesButton.setBackground(new java.awt.Color(149, 149, 149));
-        jSalesButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jSalesButton.setForeground(new java.awt.Color(249, 249, 249));
-        jSalesButton.setText("Vendas");
-        jSalesButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
-        jSalesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jSalesButton.setFocusPainted(false);
-        jSalesButton.setOpaque(false);
-        jSalesButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        jSaleButton.setBackground(new java.awt.Color(149, 149, 149));
+        jSaleButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jSaleButton.setForeground(new java.awt.Color(249, 249, 249));
+        jSaleButton.setText("Vendas");
+        jSaleButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
+        jSaleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jSaleButton.setFocusPainted(false);
+        jSaleButton.setOpaque(false);
+        jSaleButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jSalesButtonMouseClicked(evt);
+                jSaleButtonMouseClicked(evt);
             }
         });
 
@@ -255,13 +258,13 @@ public class HomeForm extends javax.swing.JFrame {
 
         jBackgroundPane.setLayer(jTitleBar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jTitlePane, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jBackgroundPane.setLayer(jProductsButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jBackgroundPane.setLayer(jProductButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jClientButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jBackgroundPane.setLayer(jOrdersButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jBackgroundPane.setLayer(jOrderButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jIventoryButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jStockControlButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jIncomeInfluxButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jBackgroundPane.setLayer(jSalesButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jBackgroundPane.setLayer(jSaleButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jReportButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jBackgroundPane.setLayer(jBudgetButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -272,22 +275,26 @@ public class HomeForm extends javax.swing.JFrame {
             .addComponent(jTitleBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jBackgroundPaneLayout.createSequentialGroup()
                 .addComponent(jTitlePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jProductsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jProductButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBudgetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jIncomeInfluxButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jClientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jSalesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSaleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jIventoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jOrdersButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jStockControlButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jReportButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jBackgroundPaneLayout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jOrderButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jReportButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jBackgroundPaneLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jStockControlButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jBackgroundPaneLayout.setVerticalGroup(
@@ -298,9 +305,9 @@ public class HomeForm extends javax.swing.JFrame {
                     .addGroup(jBackgroundPaneLayout.createSequentialGroup()
                         .addGap(160, 160, 160)
                         .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jProductsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jProductButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jClientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jOrdersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jOrderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(92, 92, 92)
                         .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jStockControlButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -310,7 +317,7 @@ public class HomeForm extends javax.swing.JFrame {
                         .addGroup(jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jReportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jIncomeInfluxButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSalesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSaleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(190, Short.MAX_VALUE))
                     .addGroup(jBackgroundPaneLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -321,7 +328,7 @@ public class HomeForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jBackgroundPane)
+            .addComponent(jBackgroundPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,20 +358,20 @@ public class HomeForm extends javax.swing.JFrame {
         this.setLocation(this.getLocation().x + evt.getX() - coordX,this.getLocation().y + evt.getY() - coordY);
     }//GEN-LAST:event_jTitleBarMouseDragged
 
-    private void jProductsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jProductsButtonMouseClicked
-        ProductForm productsForm = new ProductForm();
-        productsForm.setVisible(true);
-    }//GEN-LAST:event_jProductsButtonMouseClicked
+    private void jProductButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jProductButtonMouseClicked
+        ProductForm productForm = new ProductForm();
+        productForm.setVisible(true);
+    }//GEN-LAST:event_jProductButtonMouseClicked
 
     private void jClientButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jClientButtonMouseClicked
         ClientForm clientForm = new ClientForm();
         clientForm.setVisible(true);
     }//GEN-LAST:event_jClientButtonMouseClicked
 
-    private void jOrdersButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jOrdersButtonMouseClicked
-        OrderForm ordersForm = new OrderForm();
-        ordersForm.setVisible(true);
-    }//GEN-LAST:event_jOrdersButtonMouseClicked
+    private void jOrderButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jOrderButtonMouseClicked
+        OrderForm orderForm = new OrderForm();
+        orderForm.setVisible(true);
+    }//GEN-LAST:event_jOrderButtonMouseClicked
 
     private void jBudgetButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBudgetButtonMouseClicked
         BudgetForm budgetForm = new BudgetForm();
@@ -386,10 +393,10 @@ public class HomeForm extends javax.swing.JFrame {
         incomeInfluxForm.setVisible(true);
     }//GEN-LAST:event_jIncomeInfluxButtonMouseClicked
 
-    private void jSalesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSalesButtonMouseClicked
-        SaleForm salesForm = new SaleForm();
-        salesForm.setVisible(true);
-    }//GEN-LAST:event_jSalesButtonMouseClicked
+    private void jSaleButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSaleButtonMouseClicked
+        SaleForm saleForm = new SaleForm();
+        saleForm.setVisible(true);
+    }//GEN-LAST:event_jSaleButtonMouseClicked
 
     private void jReportButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jReportButtonMouseClicked
         ReportForm reportForm = new ReportForm();
@@ -432,10 +439,10 @@ public class HomeForm extends javax.swing.JFrame {
     private javax.swing.JButton jIncomeInfluxButton;
     private javax.swing.JButton jIventoryButton;
     private javax.swing.JButton jMinimizeButton;
-    private javax.swing.JButton jOrdersButton;
-    private javax.swing.JButton jProductsButton;
+    private javax.swing.JButton jOrderButton;
+    private javax.swing.JButton jProductButton;
     private javax.swing.JButton jReportButton;
-    private javax.swing.JButton jSalesButton;
+    private javax.swing.JButton jSaleButton;
     private javax.swing.JButton jStockControlButton;
     private javax.swing.JPanel jTitleBar;
     private javax.swing.JLabel jTitleLabel;

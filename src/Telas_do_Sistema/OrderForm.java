@@ -1,7 +1,7 @@
 package Telas_do_Sistema;
 import static Classes_do_Sistema.Home.currentOrders;
 import static Classes_do_Sistema.Home.orders;
-import static Classes_do_Sistema.Home.totalProducts;
+import static Classes_do_Sistema.Home.currentProduct;
 import static Classes_do_Sistema.Home.products;
 import Classes_do_Sistema.Order;
 import Classes_do_Sistema.ReadNDWrite.InitWriting;
@@ -11,20 +11,12 @@ import java.io.PrintWriter;
 import javax.swing.DefaultComboBoxModel;
 
 public class OrderForm extends javax.swing.JFrame implements InitWriting {
-    Order order = new Order();
+    String[] listIDProduct = new String[currentProduct];
     
     public OrderForm() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
-        String[] list= new String[10];
-        
-        for(int i = 0; i <= totalProducts; i++)
-        {
-            list[i] = Integer.toString(products[i].getProductID());
-        }
-        DefaultComboBoxModel listIDProducts = new DefaultComboBoxModel(list);
-        jCBXOrderProducts.setModel(listIDProducts);
+        fillCBXProductID();
         jIptOrderID.setText(String.valueOf(currentOrders));
     }
 
@@ -45,7 +37,7 @@ public class OrderForm extends javax.swing.JFrame implements InitWriting {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
-        setName("ordersFrame"); // NOI18N
+        setName("orderFrame"); // NOI18N
         setUndecorated(true);
 
         jBackgroundPane.setBackground(new java.awt.Color(139, 139, 139));
@@ -100,6 +92,7 @@ public class OrderForm extends javax.swing.JFrame implements InitWriting {
             .addComponent(jCloseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jIptOrderID.setEditable(false);
         jIptOrderID.setBackground(new java.awt.Color(189, 189, 189));
         jIptOrderID.setForeground(new java.awt.Color(102, 102, 102));
         jIptOrderID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
@@ -209,6 +202,7 @@ public class OrderForm extends javax.swing.JFrame implements InitWriting {
     }//GEN-LAST:event_jCloseButtonActionPerformed
 
     private void jBtnRegOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegOrderActionPerformed
+        Order order = new Order();
         reg(order);
     }//GEN-LAST:event_jBtnRegOrderActionPerformed
 
@@ -250,12 +244,21 @@ public class OrderForm extends javax.swing.JFrame implements InitWriting {
     private javax.swing.JLayeredPane jTitleBar;
     // End of variables declaration//GEN-END:variables
 
+    public void fillCBXProductID(){
+        for(int i = 0; i < currentProduct; i++)
+        {
+            listIDProduct[i] = Integer.toString(products[i].getProductID());
+        }
+        DefaultComboBoxModel listIDProducts = new DefaultComboBoxModel(listIDProduct);
+        jCBXOrderProducts.setModel(listIDProducts);
+    }
+    
     public void reg(Order order){
         order.setOrderID(Integer.parseInt(jIptOrderID.getText()));
         order.setProductID(Integer.parseInt(jCBXOrderProducts.getItemAt(jCBXOrderProducts.getSelectedIndex()))); 
         
         save(order);
-        writeFile("Orders",(String)jCBoxFileExtensions.getSelectedItem());
+        writeFile("Order",(String)jCBoxFileExtensions.getSelectedItem());
         jIptOrderID.setText(String.valueOf(currentOrders));
     }
     
@@ -266,14 +269,14 @@ public class OrderForm extends javax.swing.JFrame implements InitWriting {
     
     @Override
     public void writeFile(String fileName,String fileExtension) {
-        String filePath = DEFAULT_FILE_PATH + fileName + fileExtension;
+        String filePath = DEFAULT_FILE_PATH + fileName + "s" + fileExtension;
         
         try {
             FileWriter fw = new FileWriter(filePath,true);
             PrintWriter pw = new PrintWriter(fw);
-            pw.println("Order-ID: "+jIptOrderID.getText());
+            pw.println(fileName + "-ID: "+jIptOrderID.getText());
 
-            pw.println("Product-Order-ID: "+ jCBXOrderProducts.getItemAt(jCBXOrderProducts.getSelectedIndex()));
+            pw.println(fileName + "-Order-ID: "+ jCBXOrderProducts.getItemAt(jCBXOrderProducts.getSelectedIndex()));
             
             pw.print("---------------------------------------------\n");
             pw.flush();

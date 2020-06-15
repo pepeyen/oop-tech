@@ -165,23 +165,23 @@
                               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jLblBudgetID" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLblID" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jIptBudgetID" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Component id="jIptID" min="-2" pref="175" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jCBoxFileExtensions" min="-2" pref="75" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jBtnRegBudget" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <Component id="jBtnReg" min="-2" pref="125" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jCBXBudgetProductID" min="-2" pref="175" max="-2" attributes="0"/>
-                                          <Component id="jLblBudgetProductID" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jCBXProductID" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="jLblProductID" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jIptBudgetProductDescription" min="-2" pref="300" max="-2" attributes="0"/>
-                                          <Component id="jLblBudgetProductDescription" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jIptDescription" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <Component id="jLblDescription" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -196,23 +196,23 @@
                                           <Component id="jLblPaymentCreditC" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
-                                      <Component id="jTxtTotalPrice" min="-2" pref="230" max="-2" attributes="0"/>
+                                      <Component id="jTxtTotal" min="-2" pref="230" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jCBXBudgetClient" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
-                                          <Component id="jLblBudgetClient" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jCBXClient" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Component id="jLblClient" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="jLblBudgetSeller" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLblSeller" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="jIptBudgetSeller" min="-2" pref="175" max="-2" attributes="0"/>
+                                              <Component id="jIptSeller" min="-2" pref="175" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="jLblBudgetSeller1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLblTotal" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -221,7 +221,7 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jBtnStartBugdet" min="-2" pref="125" max="-2" attributes="0"/>
+                              <Component id="jBtnStart" min="-2" pref="125" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -232,24 +232,24 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jBtnStartBugdet" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="jBtnStart" min="-2" pref="51" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jBtnRegBudget" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
-                          <Component id="jLblBudgetID" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jIptBudgetID" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="jBtnReg" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                          <Component id="jLblID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jIptID" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jCBoxFileExtensions" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLblBudgetClient" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLblBudgetSeller" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLblClient" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLblSeller" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLblBudgetSeller1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCBXBudgetClient" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jIptBudgetSeller" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="jLblTotal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jCBXClient" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="jIptSeller" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -257,20 +257,20 @@
                               <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jLblBudgetProductDescription" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLblDescription" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jIptBudgetProductDescription" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="jIptDescription" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="jLblBudgetProductID" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLblProductID" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jCBXBudgetProductID" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="jCBXProductID" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jTxtTotalPrice" max="32767" attributes="0"/>
+                              <Component id="jTxtTotal" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -298,7 +298,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLblBudgetID">
+            <Component class="javax.swing.JLabel" name="jLblID">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="1"/>
@@ -310,7 +310,7 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jIptBudgetID">
+            <Component class="javax.swing.JTextField" name="jIptID">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -330,7 +330,7 @@
                 <Property name="opaque" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jBtnStartBugdet">
+            <Component class="javax.swing.JButton" name="jBtnStart">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="8b" green="8b" red="8b" type="rgb"/>
@@ -347,10 +347,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnStartBugdetActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnStartActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jBtnRegBudget">
+            <Component class="javax.swing.JButton" name="jBtnReg">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="8b" green="8b" red="8b" type="rgb"/>
@@ -358,7 +358,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f9" green="f9" red="f9" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Finaliza Or&#xe7;amento"/>
+                <Property name="text" type="java.lang.String" value="Finalizar Or&#xe7;amento"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -368,7 +368,7 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnRegBudgetActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnRegActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -378,7 +378,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTblBudgetCart">
+                <Component class="javax.swing.JTable" name="jTblCart">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="f9" green="f9" red="f9" type="rgb"/>
@@ -409,7 +409,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLblBudgetClient">
+            <Component class="javax.swing.JLabel" name="jLblClient">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="1"/>
@@ -420,7 +420,7 @@
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jIptBudgetSeller">
+            <Component class="javax.swing.JTextField" name="jIptSeller">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="8b" green="8b" red="8b" type="rgb"/>
@@ -439,7 +439,7 @@
                 <Property name="opaque" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLblBudgetSeller">
+            <Component class="javax.swing.JLabel" name="jLblSeller">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="1"/>
@@ -451,7 +451,7 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLblBudgetProductDescription">
+            <Component class="javax.swing.JLabel" name="jLblDescription">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="1"/>
@@ -463,7 +463,7 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jIptBudgetProductDescription">
+            <Component class="javax.swing.JTextField" name="jIptDescription">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -483,7 +483,7 @@
                 <Property name="opaque" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jCBXBudgetClient">
+            <Component class="javax.swing.JComboBox" name="jCBXClient">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="bd" red="bd" type="rgb"/>
@@ -507,7 +507,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jCBXBudgetProductID">
+            <Component class="javax.swing.JComboBox" name="jCBXProductID">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="bd" green="bd" red="bd" type="rgb"/>
@@ -531,7 +531,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLblBudgetProductID">
+            <Component class="javax.swing.JLabel" name="jLblProductID">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="1"/>
@@ -542,7 +542,7 @@
                 <Property name="text" type="java.lang.String" value="ID Produto"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLblBudgetSeller1">
+            <Component class="javax.swing.JLabel" name="jLblTotal">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="18" style="1"/>
@@ -553,7 +553,7 @@
                 <Property name="text" type="java.lang.String" value="TOTAL"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTxtTotalPrice">
+            <Component class="javax.swing.JTextField" name="jTxtTotal">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="8b" green="8b" red="8b" type="rgb"/>

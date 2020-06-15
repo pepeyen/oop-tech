@@ -13,7 +13,6 @@ import static Classes_do_Sistema.Home.clients;
 public class ClientForm extends javax.swing.JFrame implements InitWriting {
     
     int coordX, coordY;
-    Client client = new Client();
     
     public ClientForm() {
         initComponents();
@@ -40,6 +39,7 @@ public class ClientForm extends javax.swing.JFrame implements InitWriting {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
+        setName("clientFrame"); // NOI18N
         setUndecorated(true);
 
         jBackgroundPane.setBackground(new java.awt.Color(139, 139, 139));
@@ -207,6 +207,7 @@ public class ClientForm extends javax.swing.JFrame implements InitWriting {
     }//GEN-LAST:event_jCloseButtonActionPerformed
 
     private void jRegProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRegProductActionPerformed
+        Client client = new Client();
         reg(client);
     }//GEN-LAST:event_jRegProductActionPerformed
 
@@ -253,8 +254,9 @@ public class ClientForm extends javax.swing.JFrame implements InitWriting {
         client.setClientName(jIptClientName.getText());
         
         save(client);
-        writeFile("Clients",(String)jCBoxFileExtensions.getSelectedItem());
-        jIptClientID.setText(String.valueOf(currentClient));     
+        writeFile("Client",(String)jCBoxFileExtensions.getSelectedItem());
+        jIptClientID.setText(String.valueOf(currentClient)); 
+        jIptClientName.setText("");
     }
     
     public void save(Client client){
@@ -264,14 +266,14 @@ public class ClientForm extends javax.swing.JFrame implements InitWriting {
     
     @Override
     public void writeFile(String fileName,String fileExtension) {
-        String filePath = DEFAULT_FILE_PATH + fileName + fileExtension;
+        String filePath = DEFAULT_FILE_PATH + fileName + "s" + fileExtension;
         
         try {
             FileWriter fw = new FileWriter(filePath,true);
             PrintWriter pw = new PrintWriter(fw);
-            pw.println("Client-ID: "+jIptClientID.getText());
+            pw.println(fileName + "-ID: "+jIptClientID.getText());
 
-            pw.println("Client-Name: "+jIptClientName.getText());
+            pw.println(fileName + "-Name: "+jIptClientName.getText());
             
             pw.print("---------------------------------------------\n");
             pw.flush();

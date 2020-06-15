@@ -1,8 +1,8 @@
 package Telas_do_Sistema;
 import Classes_do_Sistema.Budget;
 import static Classes_do_Sistema.Home.clients;
-import static Classes_do_Sistema.Home.totalClients;
-import static Classes_do_Sistema.Home.totalProducts;
+import static Classes_do_Sistema.Home.currentClient;
+import static Classes_do_Sistema.Home.currentProduct;
 import static Classes_do_Sistema.Home.products;
 import static Classes_do_Sistema.Home.currentBudget;
 import static Classes_do_Sistema.Home.totalBudget;
@@ -15,11 +15,15 @@ import javax.swing.table.DefaultTableModel;
 
 public class BudgetForm extends javax.swing.JFrame implements InitWriting{
     Budget budget = new Budget();
+    
+    String[] listNameClient = new String[currentClient];
+    String[] listIDProduct = new String[currentProduct];
+    
     int item = 0;
     
     public BudgetForm() {
         initComponents();
-        this.setLocationRelativeTo(null);   
+        this.setLocationRelativeTo(null);
         fillCBXClientName();
         fillCBXProductID();
     }
@@ -34,22 +38,22 @@ public class BudgetForm extends javax.swing.JFrame implements InitWriting{
         jMinimizeButton = new javax.swing.JButton();
         jCloseButton = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        jLblBudgetID = new javax.swing.JLabel();
-        jIptBudgetID = new javax.swing.JTextField();
-        jBtnStartBugdet = new javax.swing.JButton();
-        jBtnRegBudget = new javax.swing.JButton();
+        jLblID = new javax.swing.JLabel();
+        jIptID = new javax.swing.JTextField();
+        jBtnStart = new javax.swing.JButton();
+        jBtnReg = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTblBudgetCart = new javax.swing.JTable();
-        jLblBudgetClient = new javax.swing.JLabel();
-        jIptBudgetSeller = new javax.swing.JTextField();
-        jLblBudgetSeller = new javax.swing.JLabel();
-        jLblBudgetProductDescription = new javax.swing.JLabel();
-        jIptBudgetProductDescription = new javax.swing.JTextField();
-        jCBXBudgetClient = new javax.swing.JComboBox<>();
-        jCBXBudgetProductID = new javax.swing.JComboBox<>();
-        jLblBudgetProductID = new javax.swing.JLabel();
-        jLblBudgetSeller1 = new javax.swing.JLabel();
-        jTxtTotalPrice = new javax.swing.JTextField();
+        jTblCart = new javax.swing.JTable();
+        jLblClient = new javax.swing.JLabel();
+        jIptSeller = new javax.swing.JTextField();
+        jLblSeller = new javax.swing.JLabel();
+        jLblDescription = new javax.swing.JLabel();
+        jIptDescription = new javax.swing.JTextField();
+        jCBXClient = new javax.swing.JComboBox<>();
+        jCBXProductID = new javax.swing.JComboBox<>();
+        jLblProductID = new javax.swing.JLabel();
+        jLblTotal = new javax.swing.JLabel();
+        jTxtTotal = new javax.swing.JTextField();
         jRBtnPaymentMoney = new javax.swing.JRadioButton();
         jRBtnPaymentDebitC = new javax.swing.JRadioButton();
         jRBtnPaymentCreditC = new javax.swing.JRadioButton();
@@ -119,44 +123,44 @@ public class BudgetForm extends javax.swing.JFrame implements InitWriting{
         jLayeredPane1.setOpaque(true);
         jLayeredPane1.setPreferredSize(new java.awt.Dimension(960, 480));
 
-        jLblBudgetID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLblBudgetID.setForeground(new java.awt.Color(1, 1, 1));
-        jLblBudgetID.setText("ID Orçamento");
-        jLblBudgetID.setEnabled(false);
+        jLblID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLblID.setForeground(new java.awt.Color(1, 1, 1));
+        jLblID.setText("ID Orçamento");
+        jLblID.setEnabled(false);
 
-        jIptBudgetID.setEditable(false);
-        jIptBudgetID.setBackground(new java.awt.Color(139, 139, 139));
-        jIptBudgetID.setForeground(new java.awt.Color(139, 139, 139));
-        jIptBudgetID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 139, 139)));
-        jIptBudgetID.setEnabled(false);
-        jIptBudgetID.setOpaque(false);
+        jIptID.setEditable(false);
+        jIptID.setBackground(new java.awt.Color(139, 139, 139));
+        jIptID.setForeground(new java.awt.Color(139, 139, 139));
+        jIptID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 139, 139)));
+        jIptID.setEnabled(false);
+        jIptID.setOpaque(false);
 
-        jBtnStartBugdet.setBackground(new java.awt.Color(139, 139, 139));
-        jBtnStartBugdet.setForeground(new java.awt.Color(249, 249, 249));
-        jBtnStartBugdet.setText("Novo Orçamento");
-        jBtnStartBugdet.setBorder(null);
-        jBtnStartBugdet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnStartBugdet.addActionListener(new java.awt.event.ActionListener() {
+        jBtnStart.setBackground(new java.awt.Color(139, 139, 139));
+        jBtnStart.setForeground(new java.awt.Color(249, 249, 249));
+        jBtnStart.setText("Novo Orçamento");
+        jBtnStart.setBorder(null);
+        jBtnStart.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnStartBugdetActionPerformed(evt);
+                jBtnStartActionPerformed(evt);
             }
         });
 
-        jBtnRegBudget.setBackground(new java.awt.Color(139, 139, 139));
-        jBtnRegBudget.setForeground(new java.awt.Color(249, 249, 249));
-        jBtnRegBudget.setText("Finaliza Orçamento");
-        jBtnRegBudget.setBorder(null);
-        jBtnRegBudget.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnRegBudget.setEnabled(false);
-        jBtnRegBudget.addActionListener(new java.awt.event.ActionListener() {
+        jBtnReg.setBackground(new java.awt.Color(139, 139, 139));
+        jBtnReg.setForeground(new java.awt.Color(249, 249, 249));
+        jBtnReg.setText("Finalizar Orçamento");
+        jBtnReg.setBorder(null);
+        jBtnReg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnReg.setEnabled(false);
+        jBtnReg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnRegBudgetActionPerformed(evt);
+                jBtnRegActionPerformed(evt);
             }
         });
 
-        jTblBudgetCart.setBackground(new java.awt.Color(249, 249, 249));
-        jTblBudgetCart.setForeground(new java.awt.Color(109, 109, 109));
-        jTblBudgetCart.setModel(new javax.swing.table.DefaultTableModel(
+        jTblCart.setBackground(new java.awt.Color(249, 249, 249));
+        jTblCart.setForeground(new java.awt.Color(109, 109, 109));
+        jTblCart.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -179,63 +183,63 @@ public class BudgetForm extends javax.swing.JFrame implements InitWriting{
                 return canEdit [columnIndex];
             }
         });
-        jTblBudgetCart.setGridColor(new java.awt.Color(109, 109, 109));
-        jTblBudgetCart.setSelectionBackground(new java.awt.Color(139, 139, 139));
-        jTblBudgetCart.setSelectionForeground(new java.awt.Color(249, 249, 249));
-        jScrollPane1.setViewportView(jTblBudgetCart);
+        jTblCart.setGridColor(new java.awt.Color(109, 109, 109));
+        jTblCart.setSelectionBackground(new java.awt.Color(139, 139, 139));
+        jTblCart.setSelectionForeground(new java.awt.Color(249, 249, 249));
+        jScrollPane1.setViewportView(jTblCart);
 
-        jLblBudgetClient.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLblBudgetClient.setForeground(new java.awt.Color(1, 1, 1));
-        jLblBudgetClient.setText("Cliente");
+        jLblClient.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLblClient.setForeground(new java.awt.Color(1, 1, 1));
+        jLblClient.setText("Cliente");
 
-        jIptBudgetSeller.setBackground(new java.awt.Color(139, 139, 139));
-        jIptBudgetSeller.setForeground(new java.awt.Color(139, 139, 139));
-        jIptBudgetSeller.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 139, 139)));
-        jIptBudgetSeller.setEnabled(false);
-        jIptBudgetSeller.setOpaque(false);
+        jIptSeller.setBackground(new java.awt.Color(139, 139, 139));
+        jIptSeller.setForeground(new java.awt.Color(139, 139, 139));
+        jIptSeller.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 139, 139)));
+        jIptSeller.setEnabled(false);
+        jIptSeller.setOpaque(false);
 
-        jLblBudgetSeller.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLblBudgetSeller.setForeground(new java.awt.Color(1, 1, 1));
-        jLblBudgetSeller.setText("Vendedor");
-        jLblBudgetSeller.setEnabled(false);
+        jLblSeller.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLblSeller.setForeground(new java.awt.Color(1, 1, 1));
+        jLblSeller.setText("Vendedor");
+        jLblSeller.setEnabled(false);
 
-        jLblBudgetProductDescription.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLblBudgetProductDescription.setForeground(new java.awt.Color(1, 1, 1));
-        jLblBudgetProductDescription.setText("Descrição do Produto");
-        jLblBudgetProductDescription.setEnabled(false);
+        jLblDescription.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLblDescription.setForeground(new java.awt.Color(1, 1, 1));
+        jLblDescription.setText("Descrição do Produto");
+        jLblDescription.setEnabled(false);
 
-        jIptBudgetProductDescription.setEditable(false);
-        jIptBudgetProductDescription.setBackground(new java.awt.Color(139, 139, 139));
-        jIptBudgetProductDescription.setForeground(new java.awt.Color(139, 139, 139));
-        jIptBudgetProductDescription.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 139, 139)));
-        jIptBudgetProductDescription.setEnabled(false);
-        jIptBudgetProductDescription.setOpaque(false);
+        jIptDescription.setEditable(false);
+        jIptDescription.setBackground(new java.awt.Color(139, 139, 139));
+        jIptDescription.setForeground(new java.awt.Color(139, 139, 139));
+        jIptDescription.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 139, 139)));
+        jIptDescription.setEnabled(false);
+        jIptDescription.setOpaque(false);
 
-        jCBXBudgetClient.setBackground(new java.awt.Color(189, 189, 189));
-        jCBXBudgetClient.setForeground(new java.awt.Color(102, 102, 102));
-        jCBXBudgetClient.setMaximumRowCount(5);
-        jCBXBudgetClient.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
+        jCBXClient.setBackground(new java.awt.Color(189, 189, 189));
+        jCBXClient.setForeground(new java.awt.Color(102, 102, 102));
+        jCBXClient.setMaximumRowCount(5);
+        jCBXClient.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
 
-        jCBXBudgetProductID.setBackground(new java.awt.Color(189, 189, 189));
-        jCBXBudgetProductID.setForeground(new java.awt.Color(102, 102, 102));
-        jCBXBudgetProductID.setMaximumRowCount(5);
-        jCBXBudgetProductID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
+        jCBXProductID.setBackground(new java.awt.Color(189, 189, 189));
+        jCBXProductID.setForeground(new java.awt.Color(102, 102, 102));
+        jCBXProductID.setMaximumRowCount(5);
+        jCBXProductID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
 
-        jLblBudgetProductID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLblBudgetProductID.setForeground(new java.awt.Color(1, 1, 1));
-        jLblBudgetProductID.setText("ID Produto");
+        jLblProductID.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLblProductID.setForeground(new java.awt.Color(1, 1, 1));
+        jLblProductID.setText("ID Produto");
 
-        jLblBudgetSeller1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLblBudgetSeller1.setForeground(new java.awt.Color(139, 139, 139));
-        jLblBudgetSeller1.setText("TOTAL");
+        jLblTotal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLblTotal.setForeground(new java.awt.Color(139, 139, 139));
+        jLblTotal.setText("TOTAL");
 
-        jTxtTotalPrice.setBackground(new java.awt.Color(139, 139, 139));
-        jTxtTotalPrice.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTxtTotalPrice.setForeground(new java.awt.Color(139, 139, 139));
-        jTxtTotalPrice.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTxtTotalPrice.setText("0");
-        jTxtTotalPrice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 139, 139)));
-        jTxtTotalPrice.setOpaque(false);
+        jTxtTotal.setBackground(new java.awt.Color(139, 139, 139));
+        jTxtTotal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTxtTotal.setForeground(new java.awt.Color(139, 139, 139));
+        jTxtTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTxtTotal.setText("0");
+        jTxtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 139, 139)));
+        jTxtTotal.setOpaque(false);
 
         jBtnGroupPayment.add(jRBtnPaymentMoney);
         jRBtnPaymentMoney.setForeground(new java.awt.Color(139, 139, 139));
@@ -291,21 +295,21 @@ public class BudgetForm extends javax.swing.JFrame implements InitWriting{
         jCBoxFileExtensions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".txt", ".doc" }));
         jCBoxFileExtensions.setFocusable(false);
 
-        jLayeredPane1.setLayer(jLblBudgetID, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jIptBudgetID, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jBtnStartBugdet, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jBtnRegBudget, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLblID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jIptID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jBtnStart, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jBtnReg, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLblBudgetClient, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jIptBudgetSeller, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLblBudgetSeller, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLblBudgetProductDescription, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jIptBudgetProductDescription, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jCBXBudgetClient, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jCBXBudgetProductID, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLblBudgetProductID, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLblBudgetSeller1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jTxtTotalPrice, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLblClient, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jIptSeller, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLblSeller, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLblDescription, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jIptDescription, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jCBXClient, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jCBXProductID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLblProductID, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLblTotal, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jTxtTotal, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jRBtnPaymentMoney, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jRBtnPaymentDebitC, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jRBtnPaymentCreditC, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -327,21 +331,21 @@ public class BudgetForm extends javax.swing.JFrame implements InitWriting{
                         .addGap(39, 39, 39)
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                .addComponent(jLblBudgetID)
+                                .addComponent(jLblID)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jIptBudgetID, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jIptID, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jCBoxFileExtensions, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jBtnRegBudget, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jBtnReg, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCBXBudgetProductID, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLblBudgetProductID))
+                                    .addComponent(jCBXProductID, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLblProductID))
                                 .addGap(18, 18, 18)
                                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jIptBudgetProductDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLblBudgetProductDescription))
+                                    .addComponent(jIptDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLblDescription))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jRBtnPaymentDebitC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -353,62 +357,62 @@ public class BudgetForm extends javax.swing.JFrame implements InitWriting{
                                     .addComponent(jLblPaymentDebitC)
                                     .addComponent(jLblPaymentCreditC))
                                 .addGap(176, 176, 176)
-                                .addComponent(jTxtTotalPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTxtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCBXBudgetClient, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLblBudgetClient))
+                                    .addComponent(jCBXClient, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLblClient))
                                 .addGap(18, 18, 18)
                                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                        .addComponent(jLblBudgetSeller)
+                                        .addComponent(jLblSeller)
                                         .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                        .addComponent(jIptBudgetSeller, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jIptSeller, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLblBudgetSeller1)
+                                        .addComponent(jLblTotal)
                                         .addGap(86, 86, 86))))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jBtnStartBugdet, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jBtnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jBtnStartBugdet, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBtnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnRegBudget, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLblBudgetID)
-                    .addComponent(jIptBudgetID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnReg, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLblID)
+                    .addComponent(jIptID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBoxFileExtensions, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLblBudgetClient)
-                    .addComponent(jLblBudgetSeller))
+                    .addComponent(jLblClient)
+                    .addComponent(jLblSeller))
                 .addGap(18, 18, 18)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLblBudgetSeller1)
-                    .addComponent(jCBXBudgetClient, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jIptBudgetSeller, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLblTotal)
+                    .addComponent(jCBXClient, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jIptSeller, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addGap(0, 31, Short.MAX_VALUE)
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                .addComponent(jLblBudgetProductDescription)
+                                .addComponent(jLblDescription)
                                 .addGap(18, 18, 18)
-                                .addComponent(jIptBudgetProductDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jIptDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                .addComponent(jLblBudgetProductID)
+                                .addComponent(jLblProductID)
                                 .addGap(18, 18, 18)
-                                .addComponent(jCBXBudgetProductID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jCBXProductID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(63, 63, 63))
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addComponent(jTxtTotalPrice)
+                        .addComponent(jTxtTotal)
                         .addGap(52, 52, 52))
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -468,11 +472,11 @@ public class BudgetForm extends javax.swing.JFrame implements InitWriting{
         this.dispose();
     }//GEN-LAST:event_jCloseButtonActionPerformed
 
-    private void jBtnStartBugdetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnStartBugdetActionPerformed
-        if(jCBXBudgetClient.getItemAt(jCBXBudgetClient.getSelectedIndex()) != null && jCBXBudgetProductID.getItemAt(jCBXBudgetProductID.getSelectedIndex()) != null){
+    private void jBtnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnStartActionPerformed
+        if(jCBXClient.getItemAt(jCBXClient.getSelectedIndex()) != null && jCBXProductID.getItemAt(jCBXProductID.getSelectedIndex()) != null){
             enableBudget();
         }     
-    }//GEN-LAST:event_jBtnStartBugdetActionPerformed
+    }//GEN-LAST:event_jBtnStartActionPerformed
 
     private void jRBtnPaymentMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBtnPaymentMoneyActionPerformed
         calcFullPrice("Money");
@@ -486,9 +490,9 @@ public class BudgetForm extends javax.swing.JFrame implements InitWriting{
         calcFullPrice("CreditC");
     }//GEN-LAST:event_jRBtnPaymentCreditCActionPerformed
 
-    private void jBtnRegBudgetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegBudgetActionPerformed
+    private void jBtnRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegActionPerformed
         reg();
-    }//GEN-LAST:event_jBtnRegBudgetActionPerformed
+    }//GEN-LAST:event_jBtnRegActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -518,78 +522,73 @@ public class BudgetForm extends javax.swing.JFrame implements InitWriting{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane jBackgroundPane;
     private javax.swing.ButtonGroup jBtnGroupPayment;
-    private javax.swing.JButton jBtnRegBudget;
-    private javax.swing.JButton jBtnStartBugdet;
-    private javax.swing.JComboBox<String> jCBXBudgetClient;
-    private javax.swing.JComboBox<String> jCBXBudgetProductID;
+    private javax.swing.JButton jBtnReg;
+    private javax.swing.JButton jBtnStart;
+    private javax.swing.JComboBox<String> jCBXClient;
+    private javax.swing.JComboBox<String> jCBXProductID;
     private javax.swing.JComboBox<String> jCBoxFileExtensions;
     private javax.swing.JButton jCloseButton;
-    private javax.swing.JTextField jIptBudgetID;
-    private javax.swing.JTextField jIptBudgetProductDescription;
-    private javax.swing.JTextField jIptBudgetSeller;
+    private javax.swing.JTextField jIptDescription;
+    private javax.swing.JTextField jIptID;
+    private javax.swing.JTextField jIptSeller;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JLabel jLblBudgetClient;
-    private javax.swing.JLabel jLblBudgetID;
-    private javax.swing.JLabel jLblBudgetProductDescription;
-    private javax.swing.JLabel jLblBudgetProductID;
-    private javax.swing.JLabel jLblBudgetSeller;
-    private javax.swing.JLabel jLblBudgetSeller1;
+    private javax.swing.JLabel jLblClient;
+    private javax.swing.JLabel jLblDescription;
+    private javax.swing.JLabel jLblID;
     private javax.swing.JLabel jLblPaymentCreditC;
     private javax.swing.JLabel jLblPaymentDebitC;
     private javax.swing.JLabel jLblPaymentMoney;
+    private javax.swing.JLabel jLblProductID;
+    private javax.swing.JLabel jLblSeller;
+    private javax.swing.JLabel jLblTotal;
     private javax.swing.JButton jMinimizeButton;
     private javax.swing.JRadioButton jRBtnPaymentCreditC;
     private javax.swing.JRadioButton jRBtnPaymentDebitC;
     private javax.swing.JRadioButton jRBtnPaymentMoney;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTblBudgetCart;
+    private javax.swing.JTable jTblCart;
     private javax.swing.JLayeredPane jTitleBar;
-    private javax.swing.JTextField jTxtTotalPrice;
+    private javax.swing.JTextField jTxtTotal;
     // End of variables declaration//GEN-END:variables
 
     public void updateOrderID(){
-        item = Integer.parseInt(jCBXBudgetProductID.getItemAt(jCBXBudgetProductID.getSelectedIndex()));
+        item = Integer.parseInt(jCBXProductID.getItemAt(jCBXProductID.getSelectedIndex()));
         
         totalBudget ++;
-        budget.Hash(Integer.parseInt(jCBXBudgetProductID.getItemAt(jCBXBudgetProductID.getSelectedIndex())), totalBudget);
+        budget.Hash(Integer.parseInt(jCBXProductID.getItemAt(jCBXProductID.getSelectedIndex())), totalBudget);
         
-        jIptBudgetID.setText(budget.getBudgetID());
+        jIptID.setText(budget.getBudgetID());
     }
     
-    public void fillCBXClientName(){
-        String[] list= new String[10];
-        
-        for(int i = 0; i <= totalClients; i++)
+    public void fillCBXClientName(){      
+        for(int i = 0; i < currentClient; i++)
         {
-            System.out.println(i);
-            list[i] = clients[i].getClientName();
+            listNameClient[i] = clients[i].getClientName();
         }
-        DefaultComboBoxModel listNameClients = new DefaultComboBoxModel(list);
-        jCBXBudgetClient.setModel(listNameClients);
+        DefaultComboBoxModel listNameClients = new DefaultComboBoxModel(listNameClient);
+        jCBXClient.setModel(listNameClients);
     }
     
     public void fillCBXProductID(){
-        String[] list= new String[10];
-        
-        for(int i = 0; i <= totalProducts; i++)
+        for(int i = 0; i < currentProduct; i++)
         {
-            list[i] = Integer.toString(products[i].getProductID());
+            listIDProduct[i] = Integer.toString(products[i].getProductID());
         }
-        DefaultComboBoxModel listIDProducts = new DefaultComboBoxModel(list);
-        jCBXBudgetProductID.setModel(listIDProducts);
+        DefaultComboBoxModel listIDProducts = new DefaultComboBoxModel(listIDProduct);
+        jCBXProductID.setModel(listIDProducts);
     }
     
     public void enableBudget(){
         updateOrderID();
         
-        jIptBudgetProductDescription.setText(products[item].getProductName()+ " - " + products[item].getProductDescription());
+        jIptDescription.setText(products[item].getProductName()+ " - " + products[item].getProductDescription());
 
         jRBtnPaymentMoney.setEnabled(true);
         jRBtnPaymentDebitC.setEnabled(true);
         jRBtnPaymentCreditC.setEnabled(true);
-        jIptBudgetID.setEnabled(true);
-        jIptBudgetSeller.setEnabled(true);
-        jIptBudgetProductDescription.setEnabled(true);     
+        jIptID.setEnabled(true);
+        jIptSeller.setEnabled(true);
+        jIptDescription.setEnabled(true);     
     }
     
     public void calcFullPrice(String paymentType){
@@ -614,48 +613,48 @@ public class BudgetForm extends javax.swing.JFrame implements InitWriting{
     }
     
     public void getFullPrice(double discountPercentage) {
-        jTxtTotalPrice.setText(String.valueOf(products[item].getProductSellingPrice() - (products[item].getProductSellingPrice() * discountPercentage))); 
-        jBtnRegBudget.setEnabled(true);
+        jTxtTotal.setText(String.valueOf(products[item].getProductSellingPrice() - (products[item].getProductSellingPrice() * discountPercentage))); 
+        jBtnReg.setEnabled(true);
     }
     public void reg(){        
         insertToCart();
-        writeFile("Budgets",(String)jCBoxFileExtensions.getSelectedItem());
+        writeFile("Budget",(String)jCBoxFileExtensions.getSelectedItem());
         currentBudget ++;
-        jIptBudgetID.setText("");
-        jBtnRegBudget.setBackground(new java.awt.Color(COLOR_DEFAULT[0],COLOR_DEFAULT[1], COLOR_DEFAULT[2]));
+        jIptID.setText("");
+        jIptDescription.setText("");
     }
     
     public void insertToCart(){
-        DefaultTableModel cart = (DefaultTableModel) jTblBudgetCart.getModel();
+        DefaultTableModel cart = (DefaultTableModel) jTblCart.getModel();
         Object[] cart_data = {
-            jIptBudgetID.getText(),
-            jCBXBudgetClient.getItemAt(jCBXBudgetClient.getSelectedIndex()),
-            jIptBudgetSeller.getText(),
-            jCBXBudgetProductID.getItemAt(jCBXBudgetProductID.getSelectedIndex()),
-            jIptBudgetProductDescription.getText(),
-            jTxtTotalPrice.getText()
+            jIptID.getText(),
+            jCBXClient.getItemAt(jCBXClient.getSelectedIndex()),
+            jIptSeller.getText(),
+            jCBXProductID.getItemAt(jCBXProductID.getSelectedIndex()),
+            jIptDescription.getText(),
+            jTxtTotal.getText()
         };
         cart.addRow(cart_data);
     }
     
     @Override
     public void writeFile(String fileName, String fileExtension) {
-        String filePath = DEFAULT_FILE_PATH + fileName + fileExtension;
+        String filePath = DEFAULT_FILE_PATH + fileName + "s" + fileExtension;
         
         try {
             FileWriter fw = new FileWriter(filePath,true);
             PrintWriter pw = new PrintWriter(fw);
-            pw.println("Budget-ID: "+ jIptBudgetID.getText());
+            pw.println(fileName + "-ID: "+ jIptID.getText());
 
-            pw.println("Budget-Client-Name: "+ jCBXBudgetClient.getItemAt(jCBXBudgetClient.getSelectedIndex()));
+            pw.println(fileName + "-Client-Name: "+ jCBXClient.getItemAt(jCBXClient.getSelectedIndex()));
             
-            pw.println("Budget-Seller: "+ jIptBudgetSeller.getText());
+            pw.println(fileName + "-Seller: "+ jIptSeller.getText());
             
-            pw.println("Budget-Product-ID: "+ jCBXBudgetProductID.getItemAt(jCBXBudgetProductID.getSelectedIndex()));
+            pw.println(fileName + "-Product-ID: "+ jCBXProductID.getItemAt(jCBXProductID.getSelectedIndex()));
             
-            pw.println("Budget-Production-Description: "+ jIptBudgetProductDescription.getText());
+            pw.println(fileName + "-Production-Description: "+ jIptDescription.getText());
             
-            pw.println("Budget-Total-Price: "+ jTxtTotalPrice.getText());
+            pw.println(fileName + "-Total-Price: "+ jTxtTotal.getText());
             
             pw.print("---------------------------------------------\n");
             pw.flush();
@@ -663,8 +662,8 @@ public class BudgetForm extends javax.swing.JFrame implements InitWriting{
             fw.close();
         } 
         catch (Exception e) {
-            jBtnRegBudget.setBackground(new java.awt.Color(COLOR_ERROR[0],COLOR_ERROR[1], COLOR_ERROR[2]));
+            jBtnReg.setBackground(new java.awt.Color(COLOR_ERROR[0],COLOR_ERROR[1], COLOR_ERROR[2]));
         }
-        jBtnRegBudget.setBackground(new java.awt.Color(COLOR_SUCESS[0],COLOR_SUCESS[1], COLOR_SUCESS[2]));
+        jBtnReg.setBackground(new java.awt.Color(COLOR_SUCESS[0],COLOR_SUCESS[1], COLOR_SUCESS[2]));
     }
 }

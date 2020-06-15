@@ -21,6 +21,7 @@ public class ReportForm extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setName("reportFrame"); // NOI18N
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         jBackgroundPane.setBackground(new java.awt.Color(139, 139, 139));
         jBackgroundPane.setOpaque(true);
@@ -63,7 +64,7 @@ public class ReportForm extends javax.swing.JFrame {
         jTitleBarLayout.setHorizontalGroup(
             jTitleBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTitleBarLayout.createSequentialGroup()
-                .addContainerGap(542, Short.MAX_VALUE)
+                .addContainerGap(1182, Short.MAX_VALUE)
                 .addComponent(jMinimizeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -80,15 +81,13 @@ public class ReportForm extends javax.swing.JFrame {
         jBackgroundPane.setLayout(jBackgroundPaneLayout);
         jBackgroundPaneLayout.setHorizontalGroup(
             jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jBackgroundPaneLayout.createSequentialGroup()
-                .addComponent(jTitleBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jTitleBar, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
         );
         jBackgroundPaneLayout.setVerticalGroup(
             jBackgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jBackgroundPaneLayout.createSequentialGroup()
                 .addComponent(jTitleBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 430, Short.MAX_VALUE))
+                .addGap(0, 670, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

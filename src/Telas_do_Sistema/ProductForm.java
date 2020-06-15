@@ -4,14 +4,10 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import Classes_do_Sistema.Product;
 import Classes_do_Sistema.ReadNDWrite.InitWriting;
-import static Classes_do_Sistema.Home.totalProducts;
 import static Classes_do_Sistema.Home.currentProduct;
 import static Classes_do_Sistema.Home.products;
 
 public class ProductForm extends javax.swing.JFrame implements InitWriting {
-    
-    int coordX, coordY;
-    Product product = new Product();
     
     public ProductForm() {
         initComponents();
@@ -253,11 +249,11 @@ public class ProductForm extends javax.swing.JFrame implements InitWriting {
     }//GEN-LAST:event_jMinimizeButtonActionPerformed
 
     private void jCloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCloseButtonActionPerformed
-        totalProducts = currentProduct - 1;
         this.dispose();
     }//GEN-LAST:event_jCloseButtonActionPerformed
 
     private void jBtnRegProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegProductActionPerformed
+        Product product = new Product();
         reg(product);
     }//GEN-LAST:event_jBtnRegProductActionPerformed
 
@@ -305,39 +301,44 @@ public class ProductForm extends javax.swing.JFrame implements InitWriting {
     private javax.swing.JLayeredPane jTitleBar;
     // End of variables declaration//GEN-END:variables
 
-    public void reg(Product product){
+    public void reg(Product product){      
+        save(product);
+        writeFile("Product",(String)jCBoxFileExtensions.getSelectedItem());
+        
+        jIptProdID.setText(String.valueOf(currentProduct));  
+        jIptProdName.setText("");
+        jIptProdDescription.setText("");
+        jIptProdSellingPrice.setText("");
+        jIptProdProductionPrice.setText("");
+    }
+    
+    public void save(Product product){
         product.setProductID(Integer.parseInt(jIptProdID.getText()));
         product.setProductName(jIptProdName.getText());
         product.setProductDescription(jIptProdDescription.getText());
         product.setProductSellingPrice(Double.parseDouble(jIptProdSellingPrice.getText()));
         product.setProductProductionPrice(Double.parseDouble(jIptProdProductionPrice.getText()));
         
-        save(product);
-        writeFile("Products",(String)jCBoxFileExtensions.getSelectedItem());
-        jIptProdID.setText(String.valueOf(currentProduct));
-    }
-    
-    public void save(Product product){
         products[currentProduct] = product;
         currentProduct ++;
     }
     
     @Override
     public void writeFile(String fileName,String fileExtension) {
-        String filePath = DEFAULT_FILE_PATH + fileName + fileExtension;
+        String filePath = DEFAULT_FILE_PATH + fileName + "s" + fileExtension;
         
         try {
             FileWriter fw = new FileWriter(filePath,true);
             PrintWriter pw = new PrintWriter(fw);
-            pw.println("Product-ID: "+jIptProdID.getText());
+            pw.println(fileName + "-ID: "+jIptProdID.getText());
 
-            pw.println("Product-Name: "+jIptProdName.getText());
+            pw.println(fileName + "-Name: "+jIptProdName.getText());
 
-            pw.println("Product-Description: "+jIptProdDescription.getText());
+            pw.println(fileName + "-Description: "+jIptProdDescription.getText());
             
-            pw.println("Product-Production-Price: "+jIptProdProductionPrice.getText());
+            pw.println(fileName + "-Production-Price: "+jIptProdProductionPrice.getText());
 
-            pw.println("Product-Selling-Price: "+jIptProdSellingPrice.getText());
+            pw.println(fileName + "-Selling-Price: "+jIptProdSellingPrice.getText());
             
             pw.print("---------------------------------------------\n");
             pw.flush();

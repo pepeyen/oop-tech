@@ -4,7 +4,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="alwaysOnTop" type="boolean" value="true"/>
-    <Property name="name" type="java.lang.String" value="ordersFrame" noResource="true"/>
+    <Property name="name" type="java.lang.String" value="orderFrame" noResource="true"/>
     <Property name="undecorated" type="boolean" value="true"/>
   </Properties>
   <SyntheticProperties>
@@ -175,6 +175,7 @@
         </Container>
         <Component class="javax.swing.JTextField" name="jIptOrderID">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bd" green="bd" red="bd" type="rgb"/>
             </Property>
