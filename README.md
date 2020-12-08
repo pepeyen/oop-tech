@@ -1,2 +1,3 @@
 # oop-tech
-Oriented Object Project using Java
+
+Academic project to mock a store basic product/stock management.
